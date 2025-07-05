@@ -250,6 +250,10 @@ body {
 .mobile-menu-btn {
     display: none;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: #ffffff;
+    padding: 0.5rem;
 }
 
 .menu-icon {
@@ -1719,7 +1723,39 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 15, 0.95);
+        backdrop-filter: blur(24px);
+        border-top: 1px solid rgba(0, 245, 255, 0.2);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-menu .nav-link {
+        display: block;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-menu .nav-cta-btn {
+        margin: 1rem 1.5rem 0;
+        text-align: center;
     }
     
     .mobile-menu-btn {

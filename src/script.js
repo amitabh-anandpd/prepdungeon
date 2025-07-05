@@ -23,6 +23,45 @@ if (mobileMenuBtn && navMenu) {
         
         lucide.createIcons();
     });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
+            menuIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+    });
+}
+
+// Dashboard mobile menu functionality
+const dashboardMobileMenuBtn = document.querySelector('.dashboard-nav .mobile-menu-btn');
+const dashboardNavMenu = document.querySelector('.dashboard-nav .nav-menu');
+
+if (dashboardMobileMenuBtn && dashboardNavMenu) {
+    dashboardMobileMenuBtn.addEventListener('click', () => {
+        dashboardNavMenu.classList.toggle('active');
+        const menuIcon = dashboardMobileMenuBtn.querySelector('.menu-icon');
+        
+        if (dashboardNavMenu.classList.contains('active')) {
+            menuIcon.setAttribute('data-lucide', 'x');
+        } else {
+            menuIcon.setAttribute('data-lucide', 'menu');
+        }
+        
+        lucide.createIcons();
+    });
+    
+    // Close dashboard mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!dashboardMobileMenuBtn.contains(e.target) && !dashboardNavMenu.contains(e.target)) {
+            dashboardNavMenu.classList.remove('active');
+            const menuIcon = dashboardMobileMenuBtn.querySelector('.menu-icon');
+            menuIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+    });
 }
 
 // Smooth scrolling function
@@ -39,10 +78,22 @@ function scrollToSection(sectionId) {
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 15, 0.8)';
+    const dashboardNav = document.querySelector('.dashboard-nav');
+    
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+        } else {
+            navbar.style.background = 'rgba(10, 10, 15, 0.8)';
+        }
+    }
+    
+    if (dashboardNav) {
+        if (window.scrollY > 50) {
+            dashboardNav.style.background = 'rgba(10, 10, 15, 0.95)';
+        } else {
+            dashboardNav.style.background = 'rgba(10, 10, 15, 0.8)';
+        }
     }
 });
 
