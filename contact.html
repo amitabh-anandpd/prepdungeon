@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         
-                        <button type="submit" class="submit-btn">
+                        <button type="submit" class="contact-submit-btn">
                             <span>Send Message</span>
                             <i data-lucide="send" class="btn-icon"></i>
                         </button>
@@ -199,53 +199,6 @@
         </div>
     </section>
 
-    <!-- Office Locations -->
-    <section class="locations-section">
-        <div class="container">
-            <h2 class="section-title">Our Offices</h2>
-            <div class="locations-grid">
-                <div class="location-card">
-                    <div class="location-icon">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-                    <h3>San Francisco, CA</h3>
-                    <p class="location-address">
-                        123 Innovation Drive<br>
-                        San Francisco, CA 94105<br>
-                        United States
-                    </p>
-                    <p class="location-type">Headquarters</p>
-                </div>
-                
-                <div class="location-card">
-                    <div class="location-icon">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-                    <h3>London, UK</h3>
-                    <p class="location-address">
-                        456 Tech Street<br>
-                        London EC2A 4DP<br>
-                        United Kingdom
-                    </p>
-                    <p class="location-type">European Office</p>
-                </div>
-                
-                <div class="location-card">
-                    <div class="location-icon">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-                    <h3>Bangalore, India</h3>
-                    <p class="location-address">
-                        789 Innovation Hub<br>
-                        Bangalore 560001<br>
-                        India
-                    </p>
-                    <p class="location-type">Development Center</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -321,7 +274,7 @@
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = this.querySelector('.submit-btn');
+            const submitBtn = this.querySelector('.contact-submit-btn');
             const originalText = submitBtn.innerHTML;
             
             // Show loading state
