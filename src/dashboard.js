@@ -12,13 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeDashboard() {
-    // Check if user has completed onboarding
-    const learningPath = localStorage.getItem('learningPath');
-    if (!learningPath) {
-        // Redirect to onboarding if not completed
-        window.location.href = 'onboarding.html';
-        return;
-    }
     
     // Initialize components
     initializeTasks();
